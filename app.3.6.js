@@ -2,10 +2,13 @@
 const Koa = require('koa');
 // import Koa from 'koa'
 const Router = require('koa-router');
+const requireDirective = require('require-directory')
 
 const app = new Koa();
 const router = new Router();
 
+// const modules =  requireDirective(module,'模块下的路径');
+//这里的 modules 就是所有的路由
 router.get('/classic/latest',(ctx,next)=>{
     ctx.body = {key:'月亮与六便士'}
     return '123'
