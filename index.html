@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ws = new WebSocket('ws://localhost:3000');
+        // 开启后的动作，指定在连接后执行的事件
+        ws.onopen = () => {
+        console.log('open connection');
+        };
+        // 接收服务端发送的消息
+        ws.onmessage = (data) => {
+        console.log('data:===>',data.data);
+        };
+        // 指定在关闭后执行的事件
+        ws.onclose = () => {
+        console.log('close connection');
+        };
+    </script>
+</body>
+</html>
